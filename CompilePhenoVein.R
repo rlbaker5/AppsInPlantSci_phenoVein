@@ -34,37 +34,30 @@ for (i in 1:length(csvs)){
    #get identifying information from the file name. 
     filename<-dat[1,]
     plant<-substring(filename, regexpr(";", filename)+1)
-        # when i=1, plant now contains "236"
 
    #extract voxel size in mm:
     vox_size<-dat[2,]
     vox<-data.frame(strsplit(vox_size, ";"))
-        #vox[2,1]
 
    #extract # of pixels observed:
     px_observed<-dat[3,]
     px_obs<-data.frame(strsplit(px_observed, ";"))
-        #px_obs[2,1]
 
    #extract length of vein skeleton in mm:
     skel_length_mm<-dat[5,]
     skel<-data.frame(strsplit(skel_length_mm, ";"))
-        #skel[2,1]
 
    #extract vein density in mm2:
     vein_density_mm2<-dat[6,]
     density<-data.frame(strsplit(vein_density_mm2, ";"))
-        #density[2,1]
 
    #extract # of endpoints in vein skeleton:
     end_points<-dat[8,]
     ends<-data.frame(strsplit(end_points, ";"))
-        #ends[2,1]
         
    #extract # of branch points in vein skeleton:
     branch_points<-dat[9,]
     branch<-data.frame(strsplit(branch_points, ";"))
-        #branch[2,1]
     
    #extract areole number (note: in our datasets the 1st areole number is very large because it is the sum of all non-closed/edge areas.  We remove this value from all subsequent analyses)
     areole_num<-dat[10,]
