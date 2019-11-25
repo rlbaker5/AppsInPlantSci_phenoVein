@@ -1,8 +1,10 @@
 #rlbakerlab.com
 #robert.baker@miamioh.edu
-#11 April 2019
+#25 November 2019
 
-###This script reads in a .csv generated in Phenovein (https://www.plant-image-analysis.org/software/phenovein) and outputs a single .csv file with data from each individual phenovein .csv compiled in a more usef-friendly wasy (i.e. rectangular data frame) for subsequent data analysis in R (or any other statistical analysis platform). This script assumes that all .csv files have a numerical name (i.e. 236.csv) where the number gives some unique identying information about the leaf being analyzed AND is the value listed in line 2 of the phenoVein output under "Analysis name:;" (e.g. "Analysis name:; 236).
+###This script reads in a .csv generated in Phenovein (https://www.plant-image-analysis.org/software/phenovein) and outputs a single .csv file with data from each individual phenovein .csv compiled in a more user-friendly wasy (i.e. rectangular data frame) for subsequent data analysis in R (or any other statistical analysis platform). This script assumes that all .csv files have a numerical name (i.e. 236.csv) where the number gives some unique identying information about the leaf being analyzed (such as a genotype or plant identifier) AND is the value listed in line 2 of the phenoVein output under "Analysis name:;" (e.g. "Analysis name:; 236). This can be achieved by insuring that the image imported into phenoVein has the filename "236.tiff" and the analysis in phenovein is named 236. 
+
+#This script was originally created in R3.6.1 (2019-07-05) "Action of the Toes" 
 
 ###Citations: 
 #1. R Core Team (2019). R: A language and environment for statistical computing. R Foundation forStatistical Computing, Vienna, Austria. URL https://www.R-project.org/.
@@ -16,7 +18,7 @@ rm(list=ls())
 gc()
 
 #specify the directory the .csv files to import are in (you will neec to edit "your path")
- setwd("~/yourpath/S1_Rcode_and_example_phenoVein_output")
+ setwd("~/Downloads/AppsInPlantSci_phenoVein-master")
 
 #generates a list of all the .csv files in the directory
 csvs<-list.files(pattern = "*.csv")
